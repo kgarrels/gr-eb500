@@ -4,7 +4,7 @@
   <key>eb500_control</key>
   <category>[eb500]</category>
   <import>import eb500</import>
-  <make>eb500.EB500Control($center_freq, $samp_rate, $address, $port)</make>
+  <make>eb500.EB500Control($center_freq, $sample_rate, $address, $port)</make>
   <!-- Make one 'param' node for every Parameter you want settable from the GUI.
        Sub-nodes:
        * name
@@ -12,8 +12,8 @@
        * type -->
 
   <callback>set_center_freq($center_freq)</callback>
-
-
+  <callback>set_sample_rate($sample_rate)</callback>
+  
   <param>
     <name>Address</name>
     <key>address</key>
@@ -28,7 +28,7 @@
 
   <param>
     <name>Sample Rate</name>
-    <key>samp_rate</key>
+    <key>sample_rate</key>
     <type>int</type>
   </param>
 
