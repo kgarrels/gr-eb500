@@ -1,4 +1,6 @@
-It is considered good practice to add examples in here to demonstrate the
-functionality of your OOT module. Python scripts, GRC flow graphs or other
-code can go here.
+borip:
+Needs gr-baz and http://wiki.spench.net/wiki/USRP_Interfaces.
+Allows to block to be used as remote control for e.g. HDSDR.
+I include a slightly modified version of borip_server.py because the original did not work for me.
+
 

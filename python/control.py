@@ -27,9 +27,6 @@ import telnetlib
 
 
 # TODO
-# - expose cmd and udp ports as parameters
-# - paramter for additional stream tags?
-# - put borip_server.py and borip-EB500 stuff into examples
 # - add message ports - which protocol?
 
 
