@@ -51,26 +51,26 @@ class EB500Control(gr.basic_block):
     """
     docstring for block control
     """
-    EB500_ADDR = '192.168.2.5'
-    LOCALHOST = '127.0.0.1'
-    CMD_PORT = 5555
-    UDP_PORT = 28888
-    
-    def __init__(self, center_freq=14200000, sample_rate=640000, address = EB500_ADDR, port = CMD_PORT ):
+    def __init__(self, center_freq=14200000, sample_rate=640000, address = None, port = None ):
         gr.basic_block.__init__(self, name="control", in_sig=None, out_sig=None)
+        
+        self.localhost = '\"192.168.1.32\"'
+        CMD_PORT = 5555
+        
+        self.port = port
         self.center_freq = center_freq
         self.sample_rate = sample_rate
-        self.eb500d = EB500Cmd(address, port)
-        
+        self.eb500d = EB500Cmd(address, CMD_PORT)
         self.eb500d.send_cmd('TRAC:UDP:DEL ALL')
+        self.eb500d.send_cmd('SENSE:DEM IQ')
         self.set_center_freq(center_freq)
         self.set_sample_rate(sample_rate)
         self.eb500d.send_cmd('SYST:IF:REM:MODE SHORT')
         self.eb500d.send_cmd('SYST:COMM:LAN:PING 0')
-        self.eb500d.send_cmd('TRAC:UDP:TAG \"192.168.1.32\", ' + str(19000) + ',IF')
+        self.eb500d.send_cmd('TRAC:UDP:TAG ' + self.localhost + ', ' + str(self.port) + ',IF')
         
     def set_center_freq(self, freq):
-        cmd = "freq " + str(freq)
+        cmd = "sense:freq " + str(freq)
         self.eb500d.send_cmd(cmd)
 
     def sampRate_to_bandWidth(self, samp):
@@ -85,12 +85,11 @@ class EB500Control(gr.basic_block):
 
     def set_sample_rate(self, sample_rate):
         bandwidth = self.sampRate_to_bandWidth(sample_rate)
-        cmd = "band " + str(bandwidth)
+        cmd = "sense:band " + str(bandwidth)
         print "set bw " + str(bandwidth) + " from sr " + str(sample_rate)
         self.eb500d.send_cmd('TRAC:UDP:DEL ALL')
         self.eb500d.send_cmd(cmd)
-        self.eb500d.send_cmd('TRAC:UDP:TAG \"192.168.1.32\", ' + str(19000) + ',IF')
-
+        self.eb500d.send_cmd('TRAC:UDP:TAG ' + self.localhost + ', ' + str(self.port) + ',IF')
 
     def general_work(self) :    #, input_items, output_items):
         #output_items[0][:] = input_items[0]

@@ -21,7 +21,7 @@
   </param>
 
   <param>
-    <name>Port</name>
+    <name>UDP Port</name>
     <key>port</key>
     <type>int</type>
   </param>
