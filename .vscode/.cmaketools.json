@@ -1,0 +1,87 @@
+{
+  "variant": {
+    "label": "Debug",
+    "keywordSettings": {
+      "buildType": "debug"
+    },
+    "description": "Emit debug information without performing optimizations"
+  },
+  "activeEnvironments": [],
+  "codeModel": {
+    "configurations": [
+      {
+        "name": "Debug",
+        "projects": [
+          {
+            "buildDirectory": "/Users/kai/gnuradio/gr-eb500/build",
+            "name": "gr-eb500",
+            "sourceDirectory": "/Users/kai/gnuradio/gr-eb500",
+            "targets": [
+              {
+                "buildDirectory": "/Users/kai/gnuradio/gr-eb500/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": true,
+                    "sources": [
+                      "build/CMakeFiles/uninstall",
+                      "build/CMakeFiles/uninstall.rule"
+                    ]
+                  }
+                ],
+                "fullName": "uninstall",
+                "name": "uninstall",
+                "sourceDirectory": "/Users/kai/gnuradio/gr-eb500",
+                "type": "UTILITY"
+              },
+              {
+                "buildDirectory": "/Users/kai/gnuradio/gr-eb500/build/python",
+                "fileGroups": [
+                  {
+                    "isGenerated": true,
+                    "sources": [
+                      "../build/python/CMakeFiles/pygen_python_25340",
+                      "../build/python/CMakeFiles/pygen_python_25340.rule",
+                      "../build/python/__init__.pyc.rule",
+                      "../build/python/__init__.pyo.rule"
+                    ]
+                  }
+                ],
+                "fullName": "pygen_python_25340",
+                "name": "pygen_python_25340",
+                "sourceDirectory": "/Users/kai/gnuradio/gr-eb500/python",
+                "type": "UTILITY"
+              },
+              {
+                "buildDirectory": "/Users/kai/gnuradio/gr-eb500/build/apps",
+                "fullName": "pygen_apps_9a6dd",
+                "name": "pygen_apps_9a6dd",
+                "sourceDirectory": "/Users/kai/gnuradio/gr-eb500/apps",
+                "type": "UTILITY"
+              },
+              {
+                "buildDirectory": "/Users/kai/gnuradio/gr-eb500/build/docs/doxygen",
+                "fileGroups": [
+                  {
+                    "isGenerated": true,
+                    "sources": [
+                      "../../build/docs/doxygen/CMakeFiles/doxygen_target",
+                      "../../build/docs/doxygen/CMakeFiles/doxygen_target.rule",
+                      "../../build/docs/doxygen/xml.rule"
+                    ]
+                  }
+                ],
+                "fullName": "doxygen_target",
+                "name": "doxygen_target",
+                "sourceDirectory": "/Users/kai/gnuradio/gr-eb500/docs/doxygen",
+                "type": "UTILITY"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "cookie": "0.391096724086196",
+    "inReplyTo": "codemodel",
+    "type": "reply"
+  }
+}

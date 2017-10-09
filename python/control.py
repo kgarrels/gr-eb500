@@ -23,6 +23,7 @@ import numpy
 from gnuradio import gr
 
 import telnetlib
+import socket
 
 
 
@@ -51,7 +52,8 @@ class EB500Control(gr.basic_block):
     def __init__(self, center_freq=14200000, sample_rate=640000, address = None, port = None ):
         gr.basic_block.__init__(self, name="control", in_sig=None, out_sig=None)
         
-        self.localhost = '\"192.168.1.32\"'
+        hostname = socket.gethostname()        
+        self.localhost = '\"' + socket.gethostbyname(hostname) + '\"'
         CMD_PORT = 5555
         
         self.port = port
